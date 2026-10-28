@@ -1,0 +1,66 @@
+App\Entity\Location:
+    properties:
+        name:
+            - NotBlank:
+                  groups: [create, edit]
+                  message: 'This field cannot be empty'
+        country:
+            - NotBlank:
+                  groups: [create, edit]
+                  message: 'This field cannot be empty'
+        latitude:
+            - NotBlank:
+                  groups: [create, edit]
+                  message: 'This field cannot be empty'
+            - Range:
+                  groups: [create, edit]
+                  min: -90
+                  max: 90
+                  notInRangeMessage: 'This value should be between {{ min }} and {{ max }}'
+        longitude:
+            - NotBlank:
+                  groups: [create, edit]
+                  message: 'This field cannot be empty'
+            - Range:
+                  groups: [create, edit]
+                  min: -180
+                  max: 180
+                  notInRangeMessage: 'This value should be between {{ min }} and {{ max }}'
+
+App\Entity\Forecast:
+    properties:
+        date:
+            - NotBlank:
+                  groups: [create, edit]
+                  message: 'This field cannot be empty'
+        temperature:
+            - NotBlank:
+                  groups: [create, edit]
+                  message: 'This field cannot be empty'
+        cloudiness:
+            - NotBlank:
+                  groups: [create, edit]
+                  message: 'This field cannot be empty'
+            - Range:
+                  groups: [create, edit]
+                  min: 0
+                  max: 100
+                  notInRangeMessage: 'This value should be between {{ min }} and {{ max }}'
+        humidity:
+            - Range:
+                  groups: [create, edit]
+                  min: 0
+                  max: 100
+                  notInRangeMessage: 'This value should be between {{ min }} and {{ max }}'
+            - NotBlank:
+                  groups: [create, edit]
+                  message: 'This field cannot be empty'
+        precipitation:
+            - Range:
+                  groups: [create, edit]
+                  min: 0
+                  max: 100
+                  notInRangeMessage: 'This value should be between {{ min }} and {{ max }}'
+            - NotBlank:
+                  groups: [create, edit]
+                  message: 'This field cannot be empty'

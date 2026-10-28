@@ -31,7 +31,7 @@ class Location
     /**
      * @var Collection<int, Forecast>
      */
-    #[ORM\OneToMany(targetEntity: Forecast::class, mappedBy: 'location')]
+    #[ORM\OneToMany(targetEntity: Forecast::class, mappedBy: 'location', cascade: ['remove'])]
     private Collection $forecasts;
 
     public function __construct()
