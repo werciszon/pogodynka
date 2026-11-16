@@ -11,7 +11,11 @@
 
         <ul>
             {% for forecast in forecasts %}
-                <li>{{ forecast.date|date('d.m.Y') }}: {{ forecast.temperature }}&deg;C: {{ forecast.cloudiness }}: {{ forecast.humidity }}: {{ forecast.precipitation }} </li>
+                <li>{{ forecast.date|date('d.m.Y') }}</li>
+                <li>temperature: {{ forecast.temperature }}&deg;C:</li>
+                <li>cloudiness: {{ forecast.cloudiness }}%</li>
+                <li>humiduty: {{ forecast.humidity }}%</li>
+                <li>precipitation: {{ forecast.precipitation }}%</li>
             {% endfor %}
         </ul>
     </main>
